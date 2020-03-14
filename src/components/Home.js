@@ -100,7 +100,7 @@ export default class Home extends React.Component {
 
             eventRender={this.eventRender}
             events={{
-              url: 'https://online-calendar-backend.herokuapp.com/?type=displayEvent',
+              url: 'https://online-calendar-backend.herokuapp.com/?type=renderEvents',
             }}
             displayEventEnd={true}
             eventMouseEnter={this.handleEventMouseEnter}
