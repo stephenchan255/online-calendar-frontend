@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      appName: "Calendar System",
+      appName: "Online Calendar",
       home: false
     }
   }
