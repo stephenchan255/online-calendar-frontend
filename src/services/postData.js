@@ -1,5 +1,6 @@
 export function postData(type, data) {
-  const BaseURL = 'https://online-calendar-backend.herokuapp.com/';
+  let BaseURL = 'https://online-calendar-backend.herokuapp.com/';
+  // const BaseURL = 'https://online-calendar-backend.herokuapp.com/';
   // let BaseURL = 'http://localhost:8080/react-calendar/public/index.php';
   return new Promise((resolve, reject) => {
     fetch(BaseURL + '?type=' + type, {
