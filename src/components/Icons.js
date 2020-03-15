@@ -3,6 +3,8 @@ import { Icon } from 'semantic-ui-react'
 import ReactTooltip from 'react-tooltip';
 
 export default function Icons(props) {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   return (
     <div className="note">
       {/* colors */}
@@ -29,7 +31,7 @@ export default function Icons(props) {
         <Icon color='black' name='question circle outline' />
         <span data-tip data-for="introduction" style={{ textDecorationLine: 'underline' }}>User Guide</span>
         <ReactTooltip id='introduction' aria-haspopup='true' place="bottom" type="info" effect="solid"
-          className="tool-tip-box">
+          className="tool-tip-box" disable={isMobile}>
           <p>This system is used for employees to schedule future work hours and submit daily work summary.</p>
           <div>
             <ul>
