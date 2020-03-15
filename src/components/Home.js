@@ -17,6 +17,7 @@ import { postData } from '../services/postData';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../main.scss' // webpack must be configured to do this
+import '../styles/home.css'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -74,12 +75,12 @@ export default class Home extends React.Component {
     return (
       <div id="Body">
         <div className="col-sm-10 offset-sm-1">
-          <div className="row d-flex m-0">
-            <p className="mr-3 my-auto ml-auto">Welcome, {JSON.parse(sessionStorage.getItem("userData")).userData.username}</p>
-            <input type="button" className="btn btn-primary " value="Logout" onClick={this.logout} />
+          <div className="greeting-box">
+            <p className="greeting-text">Welcome, {JSON.parse(sessionStorage.getItem("userData")).userData.username}</p>
+            <input type="button" className="btn" value="Logout" onClick={this.logout} />
           </div>
           <hr />
-          <Icons className="my-4 d-flex" />
+          <Icons />
           <FullCalendar className="col-sm-10"
             header={{
               left: 'prev,next today myCustomButton',

@@ -1,0 +1,98 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap";
+@import 'https://fonts.googleapis.com/css?family=Rubik:200,300,400,500,600,700,900&display=swap';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", "Arial", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+}
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.greeting-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  height: auto;
+}
+.greeting-box .greeting-text {
+  margin-right: 10px;
+}
+.greeting-box .btn {
+  background: #4b6cc1;
+  color: white;
+  padding: 5px;
+}
+
+hr {
+  margin-top: 0;
+}
+
+.note {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.note .status-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.note .status-box .status {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+.fc-toolbar.fc-header-toolbar .fc-button {
+  padding: 3px;
+}
+
+.fc-left {
+  display: flex;
+}
+
+.fc-center h2 {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 320px) {
+  .fc-left {
+    flex-direction: column;
+  }
+  .fc-left .fc-today-button {
+    margin: 5px auto;
+  }
+}
+@media screen and (min-width: 321px) {
+  .fc-left {
+    flex-direction: row;
+  }
+  .fc-left .fc-button-group {
+    margin-right: 5px;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
