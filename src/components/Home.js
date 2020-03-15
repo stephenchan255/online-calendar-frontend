@@ -72,11 +72,12 @@ export default class Home extends React.Component {
       return (<Redirect to={'/'} />)
     }
 
+    const username = JSON.parse(sessionStorage.getItem("userData")).userData.username;
     return (
       <div id="Body">
         <div className="col-sm-10 offset-sm-1">
           <div className="greeting-box">
-            <p className="greeting-text">Welcome, {JSON.parse(sessionStorage.getItem("userData")).userData.username}</p>
+            <p className="greeting-text">Welcome, {username}</p>
             <input type="button" className="btn" value="Logout" onClick={this.logout} />
           </div>
           <hr />
@@ -130,7 +131,7 @@ export default class Home extends React.Component {
           <UpdateEventWindow
             showModal={this.state.showUpdateEventModal}
             onCloseModal={this.handleCloseUpdateEventModel}
-            modalTitle={this.state.modalTitle}
+            modalTitle={this.state.modalTitle + ": " + this.state.event.title}
 
             startTime={this.state.startTime}
             endTime={this.state.endTime}
