@@ -32,7 +32,7 @@ export default function Icons(props) {
         <span data-tip data-for="introduction" style={{ textDecorationLine: 'underline' }}>User Guide</span>
         <ReactTooltip id='introduction' aria-haspopup='true' place="bottom" type="info" effect="solid"
           className="tool-tip-box" disable={isMobile}
-          globalEventOff={isMobile() ? 'click' : undefined}
+          globalEventOff={isMobile ? 'touchstart' : undefined}
         >
           <p>This system is used for employees to schedule future work hours and submit daily work summary.</p>
           <div>
