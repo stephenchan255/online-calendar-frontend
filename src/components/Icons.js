@@ -33,6 +33,9 @@ export default function Icons(props) {
         <ReactTooltip id='introduction' aria-haspopup='true' place="bottom" type="info" effect="solid"
           className="tool-tip-box" disable={isMobile}
           globalEventOff={isMobile ? 'touchstart' : undefined}
+          data-event="touchstart focus mouseover"
+          data-event-off="mouseout"
+          globalEventOff="touchstart"
         >
           <p>This system is used for employees to schedule future work hours and submit daily work summary.</p>
           <div>
