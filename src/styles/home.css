@@ -102,6 +102,11 @@ hr {
   font-size: 0.8rem;
 }
 
+.fc-day-grid-event .fc-time, .fc-day-grid-event .fc-title {
+  font-weight: 300;
+  font-size: 0.6rem;
+}
+
 .modal-title {
   font-size: 1rem;
 }
@@ -149,6 +154,12 @@ hr {
   }
   .fc-right .fc-button-group:nth-child(2) {
     margin: 5px auto 0;
+  }
+}
+@media screen and (min-width: 501px) {
+  .fc-day-grid-event .fc-time, .fc-day-grid-event .fc-title {
+    font-weight: 500;
+    font-size: 0.8rem;
   }
 }
 

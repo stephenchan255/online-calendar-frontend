@@ -81,6 +81,11 @@ hr
 .fc-day-header
   font-size: 0.8rem
 
+.fc-day-grid-event 
+    .fc-time, .fc-title
+      font-weight: 300
+      font-size: 0.6rem
+
 .modal-title
   font-size: 1rem
 .time-picker-box
@@ -113,3 +118,10 @@ hr
       margin: 0 auto
     .fc-button-group:nth-child(2)
       margin: 5px auto 0
+
+// break point for phones
+@media screen and (min-width: 501px)
+  .fc-day-grid-event 
+    .fc-time, .fc-title
+      font-weight: 500
+      font-size: 0.8rem
