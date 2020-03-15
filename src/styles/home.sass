@@ -60,19 +60,40 @@ hr
   font-size: 0.8rem
   .fc-button
     padding: 3px
+.fc-button-group:first-child
+  margin-right: 2px
 .fc-left
-    display: flex
-.fc-center h2
+  display: flex
+  flex-direction: row
+  .fc-today-button
+      margin-left: 0
+.fc-center
+  width: 100%
+  text-align: center
+  h2
     font-size: 1rem
+.fc-right
+  display: flex
+  flex-direction: row
+  .fc-button-group:nth-child(2)
+    margin-left: 0
 
+// break point for iPhone SE
 @media screen and (max-width: 320px)
+  .tool-tip-box
+    max-width: 320px
+  .fc-toolbar.fc-header-toolbar
+    padding: 0 15px
   .fc-left
     flex-direction: column
     .fc-today-button
-      margin: 5px auto
-
-@media screen and (min-width: 321px)
-  .fc-left
-    flex-direction: row
+      margin: 5px auto 0
+  .fc-right
+    flex-direction: column
+    margin-right: 0
+    margin-left: auto
     .fc-button-group
-      margin-right: 5px
+      margin: 0 auto
+    .fc-button-group:nth-child(2)
+      margin: 5px auto 0
+ 

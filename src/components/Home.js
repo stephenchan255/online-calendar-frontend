@@ -85,7 +85,7 @@ export default class Home extends React.Component {
             header={{
               left: 'prev,next today myCustomButton',
               center: 'title',
-              right: 'listWeek, dayGridMonth,timeGridWeek,timeGridDay'
+              right: 'listWeek,dayGridMonth, timeGridWeek,timeGridDay'
             }}
 
             plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
