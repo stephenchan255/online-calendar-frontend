@@ -12,8 +12,8 @@ export default class PopupWindow extends React.Component {
   render() {
     const timePicker = (label, start, initialValue, handleTimeChange, time) => {
       return (
-        <div className="form-group row align-items-center">
-          <label htmlFor="time-picker" className="col-form-label col-sm-4 text-right">
+        <div className="time-picker-box">
+          <label htmlFor="time-picker">
             {label}
           </label>
           <TimePicker id="time-picker" className="col-sm-4"
@@ -26,18 +26,21 @@ export default class PopupWindow extends React.Component {
 
     return (
       <Modal show={this.props.showModal} onHide={this.props.onCloseModal}>
-        <Modal.Header closeButton={this.props.onCloseModal}>
+        <Modal.Header closeButton={this.props.onCloseModal} className="modal-title">
           <Modal.Title>{this.props.modalTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* Time selector */}
-          {timePicker("Start Time: ", "09:00", "09:30",
-            (time) => this.handleTimeChange(time, "startTime"), this.props.startTime)}
-          {timePicker("End Time: ", this.toTimeFormat(this.props.startTime + 1800), "18:00",
-            (time) => this.handleTimeChange(time, "endTime"), this.props.endTime)}
-          {/* Time Check box */}
+          <div className="time-pickers">
+            {timePicker("Start Time: ", "09:00", "09:30",
+              (time) => this.handleTimeChange(time, "startTime"), this.props.startTime)}
+            {timePicker("End Time: ", this.toTimeFormat(this.props.startTime + 1800), "18:00",
+              (time) => this.handleTimeChange(time, "endTime"), this.props.endTime)}
+            {/* Time Check box */}
+          </div>
+
           {this.props.timeCheckboxNeeded &&
-            <div className="text-center mb-4">
+            <div className="text-left mb-4">
               <Form.Check type="checkbox"
                 label="Check today's working time (only available after end time past)"
                 disabled={this.props.timeCheckboxDisabled}
@@ -61,7 +64,7 @@ export default class PopupWindow extends React.Component {
             </div>
           }
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="modal-footer">
           {this.props.deleteBtnNeeded &&
             <Button variant="danger" className={this.props.btnVisability + " mr-auto"}
               onClick={() => this.props.onDelete()}>Delete</Button>

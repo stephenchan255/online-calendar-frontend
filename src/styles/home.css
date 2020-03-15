@@ -98,6 +98,31 @@ hr {
   margin-left: 0;
 }
 
+.fc-day-header {
+  font-size: 0.8rem;
+}
+
+.modal-title {
+  font-size: 1rem;
+}
+
+.time-picker-box {
+  display: flex;
+  flex-direction: row;
+}
+.time-picker-box:first-child {
+  margin-bottom: 10px;
+}
+.time-picker-box label {
+  min-width: 100px;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 @media screen and (max-width: 320px) {
   .tool-tip-box {
     max-width: 320px;

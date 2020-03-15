@@ -77,7 +77,24 @@ hr
   flex-direction: row
   .fc-button-group:nth-child(2)
     margin-left: 0
+  
+.fc-day-header
+  font-size: 0.8rem
 
+.modal-title
+  font-size: 1rem
+.time-picker-box
+  display: flex
+  flex-direction: row
+  &:first-child
+    margin-bottom: 10px
+  label
+    min-width: 100px
+.modal-footer
+  display: flex
+  flex-direction: row
+  justify-content: center
+  
 // break point for iPhone SE
 @media screen and (max-width: 320px)
   .tool-tip-box
@@ -96,4 +113,3 @@ hr
       margin: 0 auto
     .fc-button-group:nth-child(2)
       margin: 5px auto 0
- 
