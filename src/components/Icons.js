@@ -3,8 +3,6 @@ import { Icon } from 'semantic-ui-react'
 import ReactTooltip from 'react-tooltip';
 
 export default function Icons(props) {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
   return (
     <div className="note">
       {/* colors */}
@@ -30,16 +28,16 @@ export default function Icons(props) {
         {/* user guide */}
         <Icon color='black' name='question circle outline' />
         <span data-tip data-for="introduction" style={{ textDecorationLine: 'underline' }}>User Guide</span>
-        <ReactTooltip id='introduction' place="bottom" type="info" effect="solid">
+        <ReactTooltip id='introduction' place="bottom" type="info" effect="solid" className="user-guide">
           <p>This system is used for employees to schedule future work hours and submit daily work summary.</p>
           <div>
             <ul>
-              <li>Scheduling working hours is only available within the two weeks (including today). Click on the date to select the start and end time of the work hours under that date.</li>
-              <li>Then, there will be a new event displayed on the calendar. You can view / modify / delete the corresponding event by clicking it within the date. The modification includes: adjusting the start and end time, checking the working-time and submitting the work summary.</li>
-              <li>All users can view the events, but only the owner (creator) can modify and delete them.</li>
-              <li>The working-time checking is only available for "today" after the work end time.</li>
-              <li>The monthly view only shows the start and end time of the work hours and the corresponding user name. To view the work summary, click the specific event or switch to the list view.</li>
-              <li>Different event status corresponds to different colors, which is shown in the home page.</li>
+              <li>Scheduling working hours is only available within 2 weeks (including today). Click on the date to select the start and end time.</li>
+              <li>Then, there will be a new event displayed on the calendar. Click it to view / modify / delete it.</li>
+              <li>Events are visible to all users, and are only editable to its creator.</li>
+              <li>The working-time checking is only available for "today" after the end time.</li>
+              <li>Work summary is not shown in the monthly view. It can by viewed by clicking the event or switch to the list view.</li>
+              <li>Event colors are for different event status, which is shown in the top of the page.</li>
             </ul>
           </div>
         </ReactTooltip>

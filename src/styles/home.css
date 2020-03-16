@@ -46,9 +46,6 @@ hr {
 }
 
 .note {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 .note .status-box {
@@ -60,6 +57,20 @@ hr {
   display: flex;
   flex-direction: row;
   margin-right: 10px;
+}
+
+.user-guide-box {
+  width: 100%;
+}
+.user-guide-box span {
+  display: inline-block;
+  width: 70%;
+  max-width: 350px;
+}
+
+.user-guide {
+  width: 80vw;
+  max-width: 400px;
 }
 
 .fc-toolbar.fc-header-toolbar {

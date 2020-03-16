@@ -41,9 +41,6 @@ hr
   margin-top: 0
 
 .note 
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
   margin-bottom: 10px
   .status-box
     display: flex
@@ -53,6 +50,16 @@ hr
       display: flex
       flex-direction: row
       margin-right: 10px
+
+.user-guide-box
+  width: 100%
+  span 
+    display: inline-block
+    width: 70%
+    max-width: 350px
+.user-guide
+  width: 80vw
+  max-width: 400px
   
 // Style of calendar
 .fc-toolbar.fc-header-toolbar
@@ -104,6 +111,8 @@ hr
 @media screen and (max-width: 320px)
   .tool-tip-box
     max-width: 320px
+  .user-guide-box
+
   .fc-toolbar.fc-header-toolbar
     padding: 0 15px
   .fc-left
