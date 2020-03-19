@@ -1,25 +1,16 @@
-import React, { Component } from 'react';
-import Routes from './services/routes';
+import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Routes from './services/routes';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      appName: "Online Calendar",
-      home: false
-    }
-  }
-  render() {
-    return (
-      <div>
-        <Header name={this.state.appName} />
-        <Routes name={this.state.appName} />
-        <hr />
-        <Footer />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <Header appName="Online Calendar" />
+      <Routes />
+      <Footer />
+    </>
+  );
 }
+
 export default App;

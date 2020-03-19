@@ -139,6 +139,11 @@ hr {
   justify-content: center;
 }
 
+footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
 @media screen and (max-width: 320px) {
   .tool-tip-box {
     max-width: 320px;

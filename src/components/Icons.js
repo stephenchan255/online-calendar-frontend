@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from 'semantic-ui-react'
 import ReactTooltip from 'react-tooltip';
 
-export default function Icons(props) {
+export default function Icons() {
   return (
     <div className="note">
       {/* colors */}
