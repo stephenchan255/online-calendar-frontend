@@ -21,20 +21,21 @@ export default class Signup extends Component {
     }
 
     return (
-      <div className="container mt-5 col-sm-8 col-md-6 col-lg-4 text-center">
-        <div className="form-group">
-          <input type="text" name="email" placeholder="Email" className="form-control" onChange={this.handleInputChange} />
-        </div>
-        <div className="form-group">
-          <input type="text" name="username" placeholder="Username" className="form-control" onChange={this.handleInputChange} />
-        </div>
-        <div className="form-group">
-          <input type="password" name="password" placeholder="Password" className="form-control" onChange={this.handleInputChange} />
-        </div>
-        <input type="submit" className="btn btn-success col-12 font-weight-bold my-2 py-2" value="Sign Up" onClick={this.signup} />
-        <div className="text-center my-3">
+      <div className="content">
+        <div className="form">
+          <div className="form-group">
+            <input type="text" name="email" placeholder="Email" className="form-control" onChange={this.handleInputChange} />
+          </div>
+          <div className="form-group">
+            <input type="text" name="username" placeholder="Username" className="form-control" onChange={this.handleInputChange} />
+          </div>
+          <div className="form-group">
+            <input type="password" name="password" placeholder="Password" className="form-control" onChange={this.handleInputChange} />
+          </div>
+          <input type="submit" className="btn" value="Sign Up" onClick={this.signup} />
           <a href="/">Login</a>
         </div>
+
       </div>
     );
   }

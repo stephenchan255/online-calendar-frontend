@@ -20,18 +20,17 @@ export default class Login extends Component {
     }
 
     return (
-      <div className="container mt-5 col-sm-8 col-md-6 col-lg-4 text-center">
-        <div className="form-group">
-          <input type="text" name="username" placeholder="Username"
-            onChange={this.handleInputChange} className="form-control" />
-        </div>
-        <div className="form-group">
-          <input type="password" name="password" placeholder="Password"
-            onChange={this.handleInputChange} className="form-control" />
-        </div>
-        <input type="submit" value="Login" onClick={this.login}
-          className="btn btn-success col-12 font-weight-bold my-2 py-2" />
-        <div className="text-center my-3">
+      <div className="content">
+        <div className="form">
+          <div className="form-group">
+            <input type="text" name="username" placeholder="Username"
+              onChange={this.handleInputChange} className="form-control" />
+          </div>
+          <div className="form-group">
+            <input type="password" name="password" placeholder="Password"
+              onChange={this.handleInputChange} className="form-control" />
+          </div>
+          <input type="submit" value="Login" onClick={this.login} className="btn" />
           <a href="/signup">Signup</a>
         </div>
       </div>
