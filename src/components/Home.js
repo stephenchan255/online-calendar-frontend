@@ -73,85 +73,83 @@ export default class Home extends React.Component {
 
     const username = JSON.parse(sessionStorage.getItem("userData")).userData.username;
     return (
-      <div id="Body">
-        <div className="col-sm-10 offset-sm-1">
-          <div className="greeting-box">
-            <p className="greeting-text">Welcome, {username}</p>
-            <input type="button" className="btn" value="Logout" onClick={this.logout} />
-          </div>
-          <hr />
-          <Icons />
-          <FullCalendar className="col-sm-10"
-            header={{
-              left: 'prev,next today myCustomButton',
-              center: 'title',
-              right: 'listWeek,dayGridMonth, timeGridWeek,timeGridDay'
-            }}
-
-            plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
-            defaultView='dayGridMonth'
-            fixedWeekCount={false}
-
-            selectable={true}
-            selectConstraint={{
-              start: this.state.startDate,
-              end: this.state.endDate
-            }}
-            dateClick={this.handleDateClick}
-
-            eventRender={this.eventRender}
-            events={{
-              url: 'https://online-calendar-backend.herokuapp.com/?type=renderEvents',
-            }}
-            displayEventEnd={true}
-            eventMouseEnter={this.handleEventMouseEnter}
-            eventClick={this.handleEventClick}
-
-            contentHeight={550}
-          />
-
-          <ReactTooltip id='eventTooltip' place="top" type="dark" effect="solid">
-            <span>Click to view/edit event</span>
-          </ReactTooltip>
-
-          <AddEventWindow
-            showModal={this.state.showAddEventModal}
-            onCloseModal={this.handleCloseAddEventModel}
-            modalTitle={this.state.modalTitle}
-
-            startTime={this.state.startTime}
-            endTime={this.state.endTime}
-            onTimeChange={this.handleTimeChange}
-
-            onSave={this.addEvent}
-            btnText={'Cancel'}
-          />
-
-          <UpdateEventWindow
-            showModal={this.state.showUpdateEventModal}
-            onCloseModal={this.handleCloseUpdateEventModel}
-            modalTitle={this.state.modalTitle + ": " + this.state.event.title}
-
-            startTime={this.state.startTime}
-            endTime={this.state.endTime}
-            onTimeChange={this.handleTimeChange}
-
-            timeCheckboxNeeded={true}
-            timeCheckboxDisabled={this.state.timeCheckboxDisabled}
-            timeCheckbox={this.state.timeCheckbox}
-            onInputChange={this.handleInputChange}
-
-            dailySummaryNeeded={true}
-            dailySummaryInputDisabled={this.state.dailySummaryInputDisabled}
-            dailySummary={this.state.dailySummary}
-
-            deleteBtnNeeded={true}
-            btnText={this.state.btnText}
-            btnVisability={this.state.btnVisability}
-            onSave={this.updateEvent}
-            onDelete={this.deleteEvent}
-          />
+      <div className="content">
+        <div className="greeting-box">
+          <p className="greeting-text">Welcome, {username}</p>
+          <input type="button" className="btn" value="Logout" onClick={this.logout} />
         </div>
+        <hr />
+        <Icons />
+        <FullCalendar className="col-sm-10"
+          header={{
+            left: 'prev,next today myCustomButton',
+            center: 'title',
+            right: 'listWeek,dayGridMonth, timeGridWeek,timeGridDay'
+          }}
+
+          plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
+          defaultView='dayGridMonth'
+          fixedWeekCount={false}
+
+          selectable={true}
+          selectConstraint={{
+            start: this.state.startDate,
+            end: this.state.endDate
+          }}
+          dateClick={this.handleDateClick}
+
+          eventRender={this.eventRender}
+          events={{
+            url: 'https://online-calendar-backend.herokuapp.com/?type=renderEvents',
+          }}
+          displayEventEnd={true}
+          eventMouseEnter={this.handleEventMouseEnter}
+          eventClick={this.handleEventClick}
+
+          contentHeight={550}
+        />
+
+        <ReactTooltip id='eventTooltip' place="top" type="dark" effect="solid">
+          <span>Click to view/edit event</span>
+        </ReactTooltip>
+
+        <AddEventWindow
+          showModal={this.state.showAddEventModal}
+          onCloseModal={this.handleCloseAddEventModel}
+          modalTitle={this.state.modalTitle}
+
+          startTime={this.state.startTime}
+          endTime={this.state.endTime}
+          onTimeChange={this.handleTimeChange}
+
+          onSave={this.addEvent}
+          btnText={'Cancel'}
+        />
+
+        <UpdateEventWindow
+          showModal={this.state.showUpdateEventModal}
+          onCloseModal={this.handleCloseUpdateEventModel}
+          modalTitle={this.state.modalTitle + ": " + this.state.event.title}
+
+          startTime={this.state.startTime}
+          endTime={this.state.endTime}
+          onTimeChange={this.handleTimeChange}
+
+          timeCheckboxNeeded={true}
+          timeCheckboxDisabled={this.state.timeCheckboxDisabled}
+          timeCheckbox={this.state.timeCheckbox}
+          onInputChange={this.handleInputChange}
+
+          dailySummaryNeeded={true}
+          dailySummaryInputDisabled={this.state.dailySummaryInputDisabled}
+          dailySummary={this.state.dailySummary}
+
+          deleteBtnNeeded={true}
+          btnText={this.state.btnText}
+          btnVisability={this.state.btnVisability}
+          onSave={this.updateEvent}
+          onDelete={this.deleteEvent}
+        />
       </div>
     );
   }

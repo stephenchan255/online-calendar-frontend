@@ -25,15 +25,22 @@ header h1 {
   letter-spacing: 1px;
 }
 
+.content {
+  padding: 0 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
 .greeting-box {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: baseline;
-  height: auto;
 }
 .greeting-box .greeting-text {
-  margin-right: 10px;
+  margin: auto 10px;
 }
 .greeting-box .btn {
   background: #4b6cc1;
@@ -41,56 +48,50 @@ header h1 {
   padding: 5px;
 }
 
-hr {
-  margin-top: 0;
+.icons {
+  margin-bottom: 1rem;
 }
-
-.note {
-  margin-bottom: 10px;
-}
-.note .status-box {
+.icons .status-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.note .status-box .status {
+.icons .status-box .status {
   display: flex;
   flex-direction: row;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
-.user-guide-box {
-  width: 100%;
-}
 .user-guide-box span {
   display: inline-block;
-  width: 70%;
+  width: 70vw;
   max-width: 350px;
+  text-decoration: underline;
+}
+.user-guide-box .user-guide {
+  width: 80vw;
+  max-width: 500px;
 }
 
-.user-guide {
-  width: 80vw;
-  max-width: 400px;
+.fc-toolbar > * > :not(:first-child) {
+  margin-left: 0;
 }
 
 .fc-toolbar.fc-header-toolbar {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 0.8rem;
 }
 .fc-toolbar.fc-header-toolbar .fc-button {
-  padding: 3px;
+  padding: 5px;
 }
 
 .fc-button-group:first-child {
-  margin-right: 2px;
+  margin-right: 10px;
 }
 
 .fc-left {
   display: flex;
   flex-direction: row;
-}
-.fc-left .fc-today-button {
-  margin-left: 0;
 }
 
 .fc-center {
@@ -99,18 +100,24 @@ hr {
 }
 .fc-center h2 {
   font-size: 1rem;
+  font-weight: 800;
 }
 
 .fc-right {
   display: flex;
   flex-direction: row;
 }
-.fc-right .fc-button-group:nth-child(2) {
-  margin-left: 0;
-}
 
 .fc-day-header {
   font-size: 0.8rem;
+}
+
+th.fc-day-header {
+  padding: 5px 0;
+}
+
+.fc-list-heading td {
+  font-weight: 500;
 }
 
 .fc-day-grid-event .fc-time, .fc-day-grid-event .fc-title {
@@ -125,12 +132,14 @@ hr {
 .time-picker-box {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .time-picker-box:first-child {
   margin-bottom: 10px;
 }
 .time-picker-box label {
   min-width: 100px;
+  margin-bottom: 0;
 }
 
 .modal-footer {
@@ -139,40 +148,41 @@ hr {
   justify-content: center;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem 0;
-}
-
 @media screen and (max-width: 320px) {
-  .tool-tip-box {
-    max-width: 320px;
-  }
-
-  .fc-toolbar.fc-header-toolbar {
-    padding: 0 15px;
+  .fc-button-group:first-child {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
 
   .fc-left {
     flex-direction: column;
   }
   .fc-left .fc-today-button {
-    margin: 5px auto 0;
+    display: block;
+    width: 60px;
   }
 
   .fc-right {
     flex-direction: column;
-    margin-right: 0;
-    margin-left: auto;
+    text-align: right;
   }
   .fc-right .fc-button-group {
-    margin: 0 auto;
+    width: 80px;
   }
-  .fc-right .fc-button-group:nth-child(2) {
-    margin: 5px auto 0;
+
+  .fc-list-table td {
+    padding: 5px 10px;
+  }
+
+  tr.fc-list-heading, tr.fc-list-item {
+    font-size: 0.8rem;
   }
 }
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 801px) {
+  .content {
+    padding: 0 60px 0;
+  }
+
   .fc-day-grid-event .fc-time, .fc-day-grid-event .fc-title {
     font-weight: 500;
     font-size: 0.8rem;

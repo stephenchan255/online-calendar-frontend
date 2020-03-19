@@ -14,9 +14,7 @@ body
   // font-family: 'Poppins', sans-serif
   font-family: "Rubik","Arial",sans-serif
   font-size: 16px
-  // margin: 20px 20px
 
-// ***** End of global styles ***** 
 header
   padding: 10px 0
   text-align: center
@@ -25,23 +23,29 @@ header
     font-weight: 600
     letter-spacing: 1px
 
+.content
+  padding: 0 10px 0
+
+footer 
+  text-align: center
+  padding-bottom: 1rem
+// ***** End of global styles ***** 
+  
+// Styles for greeting line
 .greeting-box
   display: flex
   flex-direction: row
   justify-content: flex-end
-  align-items: baseline
-  height: auto
   .greeting-text
-    margin-right: 10px
+    margin: auto 10px
   .btn
     background: #4b6cc1
     color: white
     padding: 5px
-hr 
-  margin-top: 0
 
-.note 
-  margin-bottom: 10px
+// Styles for icons area, including colored status & user-guide
+.icons
+  margin-bottom: 1rem
   .status-box
     display: flex
     flex-direction: row
@@ -49,91 +53,110 @@ hr
     .status
       display: flex
       flex-direction: row
-      margin-right: 10px
+      margin-right: 30px
 
 .user-guide-box
-  width: 100%
   span 
     display: inline-block
-    width: 70%
+    width: 70vw
     max-width: 350px
-.user-guide
-  width: 80vw
-  max-width: 400px
+    text-decoration: underline
+  .user-guide
+    width: 80vw
+    max-width: 500px
   
-// Style of calendar
+// ***** Style of calendar *****
+// Style of toolbar, including buttons & Date-title
+.fc-toolbar > * > :not(:first-child)
+  margin-left: 0 // overrite origin style
+
 .fc-toolbar.fc-header-toolbar
-  margin-bottom: 5px
+  margin-bottom: 10px
   font-size: 0.8rem
   .fc-button
-    padding: 3px
+    padding: 5px
+  
 .fc-button-group:first-child
-  margin-right: 2px
+  margin-right: 10px
+  
 .fc-left
   display: flex
   flex-direction: row
-  .fc-today-button
-      margin-left: 0
+  
 .fc-center
   width: 100%
   text-align: center
   h2
     font-size: 1rem
+    font-weight: 800
+
 .fc-right
   display: flex
   flex-direction: row
-  .fc-button-group:nth-child(2)
-    margin-left: 0
-  
-.fc-day-header
+
+// header of month/week/day view 
+.fc-day-header 
   font-size: 0.8rem
 
-.fc-day-grid-event 
-    .fc-time, .fc-title
-      font-weight: 300
-      font-size: 0.6rem
+th.fc-day-header
+  padding: 5px 0
 
+// header of list view
+.fc-list-heading td 
+  font-weight: 500
+
+// event inside day grid in month view
+.fc-day-grid-event 
+  .fc-time, .fc-title
+    font-weight: 300
+    font-size: 0.6rem
+
+// Style of popup modal
 .modal-title
   font-size: 1rem
 .time-picker-box
   display: flex
   flex-direction: row
+  align-items: center
   &:first-child
     margin-bottom: 10px
   label
     min-width: 100px
+    margin-bottom: 0
 .modal-footer
   display: flex
   flex-direction: row
   justify-content: center
-
-footer 
-  text-align: center
-  padding: 1rem 0
   
-// break point for iPhone SE
+// style for iPhone SE
 @media screen and (max-width: 320px)
-  .tool-tip-box
-    max-width: 320px
-
-  .fc-toolbar.fc-header-toolbar
-    padding: 0 15px
+  .fc-button-group:first-child
+    margin-bottom: 10px
+    margin-right: 0
   .fc-left
     flex-direction: column
     .fc-today-button
-      margin: 5px auto 0
+      display: block
+      width: 60px
   .fc-right
     flex-direction: column
-    margin-right: 0
-    margin-left: auto
+    text-align: right
     .fc-button-group
-      margin: 0 auto
-    .fc-button-group:nth-child(2)
-      margin: 5px auto 0
+      width: 80px
+  
+  // Style of list view
+  .fc-list-table td
+    padding: 5px 10px
 
-// break point for phones
-@media screen and (min-width: 501px)
+  tr.fc-list-heading, tr.fc-list-item
+    font-size: 0.8rem
+
+// style for desktop
+@media screen and (min-width: 801px)
+  .content
+    padding: 0 60px 0
+
   .fc-day-grid-event 
     .fc-time, .fc-title
       font-weight: 500
-      font-size: 0.8rem
+      font-size: 0.8rem  

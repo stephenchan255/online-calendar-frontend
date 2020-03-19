@@ -4,8 +4,8 @@ import ReactTooltip from 'react-tooltip';
 
 export default function Icons() {
   return (
-    <div className="note">
-      {/* colors */}
+    <div className="icons">
+      {/* colored status */}
       <div className="status-box">
         <div className="status">
           <Icon color='blue' name='circle' />
@@ -27,8 +27,8 @@ export default function Icons() {
       <div className="user-guide-box">
         {/* user guide */}
         <Icon color='black' name='question circle outline' />
-        <span data-tip data-for="introduction" style={{ textDecorationLine: 'underline' }}>User Guide</span>
-        <ReactTooltip id='introduction' place="bottom" type="info" effect="solid" className="user-guide">
+        <span data-tip data-for="intro">User Guide</span>
+        <ReactTooltip id='intro' place="bottom" type="info" effect="solid" className="user-guide">
           <p>This system is used for employees to schedule future work hours and submit daily work summary.</p>
           <div>
             <ul>
