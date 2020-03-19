@@ -17,7 +17,6 @@ import { postData } from '../services/postData';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../main.scss' // webpack must be configured to do this
-import '../styles/home.css'
 
 export default class Home extends React.Component {
   constructor(props) {
