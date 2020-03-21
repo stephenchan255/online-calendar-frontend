@@ -17,8 +17,8 @@ export default class PopupWindow extends React.Component {
         </Modal.Header>
 
         <Modal.Body>
-          {/* Time picker */}
-          <div className="time-pickers">
+          {/* Time pickers */}
+          <div>
             <TimePickerRow
               label="Start Time: "
               start="09:00" initialValue="09:30"
@@ -48,7 +48,7 @@ export default class PopupWindow extends React.Component {
 
           {/* Daily summary */}
           {this.props.dailySummaryNeeded &&
-            <>
+            <div>
               <label htmlFor="daily-summary">Daily Working Summary: </label>
               <Form.Control as="textarea" id="daily-summary" rows="5"
                 placeholder="Enter your daily working summary here"
@@ -57,7 +57,7 @@ export default class PopupWindow extends React.Component {
                 onChange={this.handleInputChange}
                 name="dailySummary"
               />
-            </>
+            </div>
           }
         </Modal.Body>
         <Modal.Footer className="modal-footer">
