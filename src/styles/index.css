@@ -150,10 +150,6 @@ th.fc-day-header {
   font-size: 0.6rem;
 }
 
-.form-control {
-  margin-bottom: 0;
-}
-
 .modal-title {
   font-size: 1rem;
 }
@@ -173,6 +169,10 @@ th.fc-day-header {
 
 .checkbox-row {
   margin: 1rem auto;
+}
+
+select.form-control, textarea.form-control {
+  margin-bottom: 0;
 }
 
 .modal-footer {
