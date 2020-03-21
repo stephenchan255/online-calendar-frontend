@@ -150,6 +150,10 @@ th.fc-day-header {
   font-size: 0.6rem;
 }
 
+.form-control {
+  margin-bottom: 0;
+}
+
 .modal-title {
   font-size: 1rem;
 }
@@ -164,7 +168,11 @@ th.fc-day-header {
 }
 .time-picker-box label {
   min-width: 100px;
-  margin-bottom: 0;
+  margin: auto 0;
+}
+
+.checkbox-row {
+  margin: 1rem auto;
 }
 
 .modal-footer {

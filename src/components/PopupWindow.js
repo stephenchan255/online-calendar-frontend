@@ -2,18 +2,6 @@ import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import TimePicker from 'react-bootstrap-time-picker';
 
-function TimePickerRow(props) {
-  return (
-    <div className="time-picker-box">
-      <label htmlFor="time-picker">{props.label}</label>
-      <TimePicker id="time-picker" className="col-sm-4"
-        start={props.start} end="19:00"
-        initialValue={props.initialValue} onChange={props.onTimeChange} value={props.time}
-      />
-    </div>
-  );
-}
-
 export default class PopupWindow extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +35,7 @@ export default class PopupWindow extends React.Component {
 
           {/* Time Check box */}
           {this.props.timeCheckboxNeeded &&
-            <div className="text-left mb-4">
+            <div className="checkbox-row">
               <Form.Check type="checkbox"
                 label="Check today's working time (only available after end time past)"
                 disabled={this.props.timeCheckboxDisabled}
@@ -60,16 +48,16 @@ export default class PopupWindow extends React.Component {
 
           {/* Daily summary */}
           {this.props.dailySummaryNeeded &&
-            <div className="form-group row align-items-center">
-              <label htmlFor="daily-summary" className="col-form-label mx-4">Daily Working Summary: </label>
-              <Form.Control as="textarea" id="daily-summary" rows="5" className="mx-4"
+            <>
+              <label htmlFor="daily-summary">Daily Working Summary: </label>
+              <Form.Control as="textarea" id="daily-summary" rows="5"
                 placeholder="Enter your daily working summary here"
                 disabled={this.props.dailySummaryInputDisabled}
                 value={this.props.dailySummary}
                 onChange={this.handleInputChange}
                 name="dailySummary"
               />
-            </div>
+            </>
           }
         </Modal.Body>
         <Modal.Footer className="modal-footer">
@@ -104,4 +92,16 @@ export default class PopupWindow extends React.Component {
   handleInputChange(e) {
     this.props.onInputChange(e);
   }
+}
+
+function TimePickerRow(props) {
+  return (
+    <div className="time-picker-box">
+      <label htmlFor="time-picker">{props.label}</label>
+      <TimePicker id="time-picker"
+        start={props.start} end="19:00"
+        initialValue={props.initialValue} onChange={props.onTimeChange} value={props.time}
+      />
+    </div>
+  );
 }
