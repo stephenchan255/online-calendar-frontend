@@ -25,6 +25,10 @@ header h1 {
   letter-spacing: 1px;
 }
 
+.form-control {
+  margin-bottom: 1rem;
+}
+
 .content {
   padding: 0 10px;
 }
