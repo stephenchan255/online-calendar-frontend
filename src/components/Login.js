@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { auth, handleInputChange } from './Signup';
-// import { postData } from '../services/postData';
 
 export default function Login() {
   const [username, setUsername] = useState('');

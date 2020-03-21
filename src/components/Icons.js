@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon } from 'semantic-ui-react'
+import React from 'react';
+import { Icon } from 'semantic-ui-react';
 import ReactTooltip from 'react-tooltip';
 
 export default function Icons() {
