@@ -2,6 +2,18 @@ import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import TimePicker from 'react-bootstrap-time-picker';
 
+function TimePickerRow(props) {
+  return (
+    <div className="time-picker-box">
+      <label htmlFor="time-picker">{props.label}</label>
+      <TimePicker id="time-picker" className="col-sm-4"
+        start={props.start} end="19:00"
+        initialValue={props.initialValue} onChange={props.onTimeChange} value={props.time}
+      />
+    </div>
+  );
+}
+
 export default class PopupWindow extends React.Component {
   constructor(props) {
     super(props);
@@ -10,35 +22,30 @@ export default class PopupWindow extends React.Component {
   }
 
   render() {
-    const timePicker = (label, start, initialValue, handleTimeChange, time) => {
-      return (
-        <div className="time-picker-box">
-          <label htmlFor="time-picker">
-            {label}
-          </label>
-          <TimePicker id="time-picker" className="col-sm-4"
-            start={start} end="19:00"
-            initialValue={initialValue} onChange={handleTimeChange} value={time}
-          />
-        </div>
-      )
-    }
-
     return (
       <Modal show={this.props.showModal} onHide={this.props.onCloseModal}>
         <Modal.Header closeButton={this.props.onCloseModal} className="modal-title">
           <Modal.Title>{this.props.modalTitle}</Modal.Title>
         </Modal.Header>
+
         <Modal.Body>
-          {/* Time selector */}
+          {/* Time picker */}
           <div className="time-pickers">
-            {timePicker("Start Time: ", "09:00", "09:30",
-              (time) => this.handleTimeChange(time, "startTime"), this.props.startTime)}
-            {timePicker("End Time: ", this.toTimeFormat(this.props.startTime + 1800), "18:00",
-              (time) => this.handleTimeChange(time, "endTime"), this.props.endTime)}
-            {/* Time Check box */}
+            <TimePickerRow
+              label="Start Time: "
+              start="09:00" initialValue="09:30"
+              onTimeChange={(time) => this.handleTimeChange(time, "startTime")}
+              time={this.props.startTime}
+            />
+            <TimePickerRow
+              label="End Time: "
+              start={this.toTimeFormat(this.props.startTime + 1800)} initialValue="18:00"
+              onTimeChange={(time) => this.handleTimeChange(time, "endTime")}
+              time={this.props.endTime}
+            />
           </div>
 
+          {/* Time Check box */}
           {this.props.timeCheckboxNeeded &&
             <div className="text-left mb-4">
               <Form.Check type="checkbox"
@@ -50,6 +57,7 @@ export default class PopupWindow extends React.Component {
               />
             </div>
           }
+
           {/* Daily summary */}
           {this.props.dailySummaryNeeded &&
             <div className="form-group row align-items-center">
@@ -80,7 +88,7 @@ export default class PopupWindow extends React.Component {
   }
 
   /**
-   * convert number to "hh:mm" format, used to control 
+   * convert number to "hh:mm" format, used to control
    * endTime.Timepicker >= startTime.value (Note: 1 hour = 3600)
    */
   toTimeFormat(num) {
