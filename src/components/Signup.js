@@ -38,17 +38,19 @@ export default function Singup() {
 }
 
 export function auth(email, username, password, setRedirect, type) {
-  if (email && username && password) {
-    postData(type, { email, username, password }).then((result) => {
-      let responseJson = result;
-      if (responseJson.userData) {
-        sessionStorage.setItem('userData', JSON.stringify(responseJson));
-        setRedirect('/home');
-      } else {
-        alert(result.error);
-      }
-    });
+  if (!(email && username && password)) {
+    alert('All fileds are required!')
   }
+
+  postData(type, { email, username, password }).then((result) => {
+    let responseJson = result;
+    if (responseJson.userData) {
+      sessionStorage.setItem('userData', JSON.stringify(responseJson));
+      setRedirect('/home');
+    } else {
+      alert(result.error);
+    }
+  });
 }
 
 export function handleInputChange(setState, e) {
