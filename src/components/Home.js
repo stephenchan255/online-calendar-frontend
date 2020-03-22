@@ -67,6 +67,7 @@ export default class Home extends React.Component {
   }
 
   render() {
+    // add sessionStorage check here to avoid error when entering url directly
     if (this.state.isLoggedout || !sessionStorage.getItem('userData')) {
       return (<Redirect to={'/'} />)
     }
