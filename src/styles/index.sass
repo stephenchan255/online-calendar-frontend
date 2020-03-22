@@ -1,7 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
 @import 'https://fonts.googleapis.com/css?family=Rubik:200,300,400,500,600,700,900&display=swap'
 
-// ***** Global styles ***** 
+// **********  Global styles **********  
 *
   margin: 0
   padding: 0
@@ -11,9 +11,10 @@ html
   scroll-behavior: smooth
 
 body
-  // font-family: 'Poppins', sans-serif
-  font-family: "Rubik","Arial",sans-serif
+  font-family: 'Poppins', sans-serif
+  // font-family: "Rubik","Arial",sans-serif
   font-size: 16px
+  line-height: 1.15
 
 header
   padding: 10px 0
@@ -21,11 +22,6 @@ header
   h1 
     font-size: 1.5rem
     font-weight: 600
-    letter-spacing: 1px
-
-.form-control
-  margin-bottom: 1rem
-
 .content
   padding: 0 10px
 
@@ -41,11 +37,30 @@ header
 footer 
   text-align: center
   padding-bottom: 1rem
-// ***** End of global styles ***** 
+// **********  End of global styles ********** 
   
+// Style of form
+.form-control // override react-bootstrap form inputs style
+  margin-bottom: 0
+
 .form
-  max-width: 300px
+  max-width: 400px
   margin: 20px auto auto
+  &>.form-control
+    margin-bottom: 1rem
+  .input-box
+    margin-bottom: 1rem
+    span 
+      margin-top: 5px
+      font-size: 12px
+  input 
+    padding: 25px 15px
+    font-size: 1.25rem
+    font-weight: 400
+    &[type=submit]
+      padding: 15px
+      font-weight: 500
+      letter-spacing: 1px
   .btn
     width: 100%
   .btn2
@@ -54,12 +69,7 @@ footer
     margin-top: 1rem
     cursor: pointer
 
-  a 
-    display: block
-    width: 100%
-    text-align: center
-    margin-top: 20px
-
+// **********  Style of homepage ********** 
 // Styles for greeting line
 .greeting-box
   display: flex
@@ -67,7 +77,6 @@ footer
   justify-content: flex-end
   .greeting-text
     margin: auto 10px
-  
 
 // Styles for icons area, including colored status & user-guide
 .icons
@@ -152,7 +161,7 @@ th.fc-day-header
     margin: auto 0
 
 .checkbox-row
-  margin: 1rem auto
+  margin: 2rem auto
 
 select.form-control, textarea.form-control // override react-bootstrap form inputs style
   margin-bottom: 0
@@ -185,8 +194,20 @@ select.form-control, textarea.form-control // override react-bootstrap form inpu
   tr.fc-list-heading, tr.fc-list-item
     font-size: 0.8rem
 
+
+// style for phones
+@media screen and (max-width: 800px)
+  .form input, .form input[type=submit]
+    padding: .375rem .75rem
+    letter-spacing: 0
+    font-size: 1rem
+    font-weight: 300
+
+
 // style for desktop
 @media screen and (min-width: 801px)
+  header h1 
+    font-size: 2rem
   .content
     padding: 0 60px 0
 
