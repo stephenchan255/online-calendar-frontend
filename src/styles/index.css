@@ -100,6 +100,7 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 .icons .status-box .status {
   display: flex;
