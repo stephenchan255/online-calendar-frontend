@@ -10,12 +10,9 @@ export function postData(type, data) {
         'Accept': 'application/json',
       },
       body: JSON.stringify(data)
-    }).then((response) => {
-      response.json().then((res) => {
-        resolve(res);
-      })
-    }).catch((error) => {
-      reject(error);
-    });
+    })
+      .then(response => response.json())
+      .then(res => resolve(res))
+      .catch(error => reject(error));
   });
 }
