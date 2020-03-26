@@ -17,11 +17,11 @@ export default function Icons() {
         </div>
         <div className="status">
           <Icon color='yellow' name='circle' />
-          <span> Time checked but no summary submitted</span>
+          <span>Time checked but no summary submitted</span>
         </div>
         <div className="status">
           <Icon color='red' name='circle' />
-          <span className="mr-auto"> Working-time unchecked</span>
+          <span> Working-time unchecked</span>
         </div>
       </div>
       <div className="user-guide-box">

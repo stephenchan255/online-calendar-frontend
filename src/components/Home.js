@@ -198,13 +198,14 @@ export default class Home extends React.Component {
       endTime: this.state.endTime,
     };
 
-    postData('addEvent', data).then((result) => {
-      if (result.success) {
-        window.location.reload();
-      } else {
-        alert(result.error);
-      }
-    });
+    postData('addEvent', data)
+      .then(result => {
+        if (result.success) {
+          window.location.reload();
+        } else {
+          alert(result.error);
+        }
+      });
     this.resetPopupWindow();
   }
 
@@ -250,22 +251,23 @@ export default class Home extends React.Component {
       userId: userId,
       eventId: eventId
     }
-    postData('checkUserId', data).then((result) => {
-      if (result.success) {
-        this.setState({
-          dailySummaryInputDisabled: false,
-          btnVisability: "visible",
-          btnText: "Cancel"
-        })
-      } else {
-        this.setState({
-          timeCheckboxDisabled: true,
-          dailySummaryInputDisabled: true,
-          btnVisability: "invisible",
-          btnText: "Close"
-        })
-      }
-    });
+    postData('checkUserId', data)
+      .then(result => {
+        if (result.success) {
+          this.setState({
+            dailySummaryInputDisabled: false,
+            btnVisability: "visible",
+            btnText: "Cancel"
+          })
+        } else {
+          this.setState({
+            timeCheckboxDisabled: true,
+            dailySummaryInputDisabled: true,
+            btnVisability: "invisible",
+            btnText: "Close"
+          })
+        }
+      });
   }
 
   handleCloseUpdateEventModel() {
@@ -291,13 +293,14 @@ export default class Home extends React.Component {
       dailySummary: this.state.dailySummary
     };
 
-    postData('updateEvent', data).then((result) => {
-      if (result.success) {
-        window.location.reload();
-      } else {
-        alert(result.error);
-      }
-    });
+    postData('updateEvent', data)
+      .then(result => {
+        if (result.success) {
+          window.location.reload();
+        } else {
+          alert(result.error);
+        }
+      });
 
     this.resetPopupWindow();
   }
@@ -328,13 +331,14 @@ export default class Home extends React.Component {
     const response = window.confirm("Are you sure to delete this event?");
     if (response === true) {
       const data = { eventId: this.state.event.id }
-      postData('deleteEvent', data).then((result) => {
-        if (result.success) {
-          window.location.reload();
-        } else {
-          alert(result.error);
-        }
-      });
+      postData('deleteEvent', data)
+        .then(result => {
+          if (result.success) {
+            window.location.reload();
+          } else {
+            alert(result.error);
+          }
+        });
     }
   }
 }

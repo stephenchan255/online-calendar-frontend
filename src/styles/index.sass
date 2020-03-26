@@ -11,71 +11,63 @@ html
   scroll-behavior: smooth
 
 body
-  font-family: 'Poppins', sans-serif
-  // font-family: "Rubik","Arial",sans-serif
+  // font-family: 'Poppins', sans-serif
+  font-family: "Rubik","Arial",sans-serif
+  // font-family: Muli,sans-serif
   font-size: 16px
   line-height: 1.15
 
 header
-  padding: 10px 0
   text-align: center
   h1 
-    font-size: 1.5rem
     font-weight: 600
-.content
-  padding: 0 10px
-
-.btn
-  background: #4b6cc1
-  color: white
-  padding: 5px
-  &.btn-danger
-    background: #dc3545
-  &.btn-secondary
-    background: #6c757d
 
 footer 
   text-align: center
   padding-bottom: 1rem
-// **********  End of global styles ********** 
-  
-// Style of form
-.form-control // override react-bootstrap form inputs style
-  margin-bottom: 0
+// ********** End of global styles **********  
+
+// ********** Style of signup/login page **********
+.content > .form
+  margin-top: 30px
 
 .form
-  max-width: 400px
-  margin: 20px auto auto
-  &>.form-control
-    margin-bottom: 1rem
-  .input-box
-    margin-bottom: 1rem
-    span 
-      margin-top: 5px
-      font-size: 12px
-      color: rgba(0, 0, 0, 0.5)
+  max-width: 350px
+  margin: auto
   input 
     padding: 20px 10px
-    font-weight: 400
+    margin-top: 1rem
     &[type=submit]
       padding: 15px
-      font-weight: bold
+      font-weight: 500
       font-size: 1.125rem
-  
+  small 
+    color: #6c757d 
   .btn
     width: 100%
-  .btn2
+
+.btn
+  background: #4b6cc1
+  color: white
+  &.btn-danger 
+    background: #dc3545
+  &.btn-secondary
+    background: #6c757d
+
+.btn2
     text-decoration: underline
     text-align: center
     margin-top: 1rem
     cursor: pointer
+// ********** End of style of signup/login page **********
 
-// **********  Style of homepage ********** 
-// Styles for greeting line
+// ********** Style of homepage ********** 
+// Style of greeting line
 .greeting-box
   display: flex
   flex-direction: row
   justify-content: flex-end
+  margin-top: 10px
   .greeting-text
     margin: auto 10px
 
@@ -102,56 +94,14 @@ footer
     width: 80vw
     max-width: 500px
   
-// ***** Style of calendar *****
-// Style of toolbar, including buttons & Date-title
-.fc-toolbar > * > :not(:first-child)
-  margin-left: 0 // overrite origin style
-
-.fc-toolbar.fc-header-toolbar
-  margin-bottom: 10px
-  font-size: 0.8rem
-  .fc-button
-    padding: 5px
-  
-.fc-button-group:first-child
-  margin-right: 10px
-  
-.fc-left
-  display: flex
-  flex-direction: row
-  
-.fc-center
-  width: 100%
-  text-align: center
-  h2
-    font-size: 1rem
-    font-weight: 800
-
-.fc-right
-  display: flex
-  flex-direction: row
-
-// header of month/week/day view 
-.fc-day-header 
-  font-size: 0.8rem
-
-th.fc-day-header
+// Style of calendar
+th.fc-day-header // header of month/week/day view
   padding: 5px 0
 
-// header of list view
-.fc-list-heading td 
+.fc-list-heading td // header of list view
   font-weight: 500
 
-// event inside day grid in month view
-.fc-day-grid-event 
-  .fc-time, .fc-title
-    font-weight: 300
-    font-size: 0.6rem
-
 // Style of popup modal
-.modal-title
-  font-size: 1rem
-
 .time-picker-box
   display: flex
   flex-direction: row
@@ -163,54 +113,80 @@ th.fc-day-header
     margin: auto 0
 
 .checkbox-row
-  margin: 2rem auto
+  margin: 1.5rem auto
 
-.modal-footer
-  display: flex
-  flex-direction: row
-  justify-content: center
+// style for phones
+@media screen and (max-width: 800px)
+  header
+    padding-top: 10px
+    h1 
+      font-size: 1.5rem
   
-// style for iPhone SE
-@media screen and (max-width: 320px)
-  .fc-button-group:first-child
-    margin-bottom: 10px
-    margin-right: 0
-  .fc-left
-    flex-direction: column
-    .fc-today-button
-      display: block
-      width: 60px
-  .fc-right
-    flex-direction: column
-    text-align: right
-    .fc-button-group
-      width: 80px
+  .content
+    padding: 0 10px
   
+  // Style of calendar
+  .fc-toolbar.fc-header-toolbar
+    font-size: 0.8rem
+    .fc-button
+      padding: 5px
+    .fc-left
+      display: flex
+      flex-direction: row
+    .fc-center 
+      width: 100%
+      text-align: center
+      h2
+        font-size: 1rem
+        font-weight: 800
+    .fc-right
+      display: flex
+      flex-direction: row
+
+  .fc-day-header // header of month/week/day view
+    font-size: 0.8rem
+  
+  .fc-day-grid-event .fc-time, .fc-day-grid-event .fc-title // event inside day grid in month view
+    font-weight: 400
+    font-size: 0.6rem
+
   // Style of list view
   .fc-list-table td
     padding: 5px 10px
 
   tr.fc-list-heading, tr.fc-list-item
     font-size: 0.8rem
+  
+// style for iPhone SE
+@media screen and (max-width: 320px)
+  // Style of fullcalendar toolbar
+  .fc-toolbar > * > :not(:first-child)
+    margin-left: 0 // overrite origin style
+  
+  .fc-toolbar.fc-header-toolbar .fc-left
+    flex-direction: column
+    .fc-today-button
+      display: block
+      width: 60px
 
-// style for phones
-@media screen and (max-width: 800px)
-  .form input, .form input[type=submit]
-    padding: .375rem .75rem
-    letter-spacing: 0
-    font-size: 1rem
-  .form input[type=submit]
-    font-weight: 500
-    
+  .fc-button-group:first-child
+    margin-bottom: 10px
+    margin-right: 0
+  
+  .fc-toolbar.fc-header-toolbar .fc-right
+    flex-direction: column
+  
 
 // style for desktop
 @media screen and (min-width: 801px)
-  header h1 
-    font-size: 2rem
-  .content
-    padding: 0 60px 0
+  header
+    padding-top: 30px
+    h1 
+      font-size: 2rem
 
-  .fc-day-grid-event 
-    .fc-time, .fc-title
-      font-weight: 500
-      font-size: 0.8rem  
+  .content
+    padding: 0 60px
+
+  // event inside day grid in month view
+  .fc-day-grid-event .fc-time
+    font-weight: 500

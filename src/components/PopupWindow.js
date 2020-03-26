@@ -12,7 +12,7 @@ export default class PopupWindow extends React.Component {
   render() {
     return (
       <Modal show={this.props.showModal} onHide={this.props.onCloseModal}>
-        <Modal.Header closeButton={this.props.onCloseModal} className="modal-title">
+        <Modal.Header closeButton={this.props.onCloseModal}>
           <Modal.Title>{this.props.modalTitle}</Modal.Title>
         </Modal.Header>
 
@@ -22,13 +22,13 @@ export default class PopupWindow extends React.Component {
             <TimePickerRow
               label="Start Time: "
               start="09:00" initialValue="09:30"
-              onTimeChange={(time) => this.handleTimeChange(time, "startTime")}
+              onTimeChange={time => this.handleTimeChange(time, "startTime")}
               time={this.props.startTime}
             />
             <TimePickerRow
               label="End Time: "
               start={this.toTimeFormat(this.props.startTime + 1800)} initialValue="18:00"
-              onTimeChange={(time) => this.handleTimeChange(time, "endTime")}
+              onTimeChange={time => this.handleTimeChange(time, "endTime")}
               time={this.props.endTime}
             />
           </div>
@@ -60,7 +60,7 @@ export default class PopupWindow extends React.Component {
             </div>
           }
         </Modal.Body>
-        <Modal.Footer className="modal-footer">
+        <Modal.Footer>
           {this.props.deleteBtnNeeded &&
             <Button variant="danger" className={this.props.btnVisability + " mr-auto"}
               onClick={() => this.props.onDelete()}>Delete</Button>
