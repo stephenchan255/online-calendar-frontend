@@ -50,7 +50,8 @@ export function auth(email, username, password, setRedirect, type) {
       } else {
         alert(result.error);
       }
-    });
+    })
+    .catch(alert);
 }
 
 export function handleInputChange(setState, e) {

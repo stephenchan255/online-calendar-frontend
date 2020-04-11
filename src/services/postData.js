@@ -10,5 +10,6 @@ export function postData(type, data) {
     },
     body: JSON.stringify(data)
   })
-    .then(response => response.json());
+    .then(response => response.json())
+    .catch(alert);
 }

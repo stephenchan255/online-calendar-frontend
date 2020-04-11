@@ -52,18 +52,6 @@ export default class Home extends React.Component {
       btnVisability: "invisible",
       btnText: "Cancel"
     };
-
-    this.logout = this.logout.bind(this);
-    this.handleDateClick = this.handleDateClick.bind(this);
-    this.handleCloseAddEventModel = this.handleCloseAddEventModel.bind(this);
-    this.handleTimeChange = this.handleTimeChange.bind(this);
-    this.resetPopupWindow = this.resetPopupWindow.bind(this);
-    this.addEvent = this.addEvent.bind(this);
-    this.handleEventClick = this.handleEventClick.bind(this);
-    this.handleCloseUpdateEventModel = this.handleCloseUpdateEventModel.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.updateEvent = this.updateEvent.bind(this);
-    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   render() {
@@ -167,12 +155,12 @@ export default class Home extends React.Component {
     return `${year}-${month}-${date}`;
   }
 
-  logout() {
+  logout = () => {
     sessionStorage.clear();
     this.setState({ isLoggedout: true });
   }
 
-  handleDateClick(arg) {
+  handleDateClick = arg => {
     if (arg.dateStr >= this.state.startDate && arg.dateStr < this.state.endDate) {
       this.setState({
         date: arg.dateStr,
@@ -182,15 +170,15 @@ export default class Home extends React.Component {
     }
   }
 
-  handleCloseAddEventModel() {
+  handleCloseAddEventModel = () => {
     this.setState({ showAddEventModal: false });
   }
 
-  handleTimeChange(time, type) {
+  handleTimeChange = (time, type) => {
     this.setState({ [type]: time });
   }
 
-  addEvent() {
+  addEvent = () => {
     const data = {
       userId: JSON.parse(sessionStorage.getItem("userData")).userData.user_id,
       date: this.state.date,
@@ -220,7 +208,7 @@ export default class Home extends React.Component {
     ReactTooltip.rebuild();
   }
 
-  handleEventClick(arg) {
+  handleEventClick = arg => {
     const start = arg.event.start;
     const end = arg.event.end;
     const dateStr = this.getDateStr(start);
@@ -270,7 +258,7 @@ export default class Home extends React.Component {
       });
   }
 
-  handleCloseUpdateEventModel() {
+  handleCloseUpdateEventModel = () => {
     this.setState({ showUpdateEventModal: false });
   }
 
@@ -278,13 +266,13 @@ export default class Home extends React.Component {
    * Handle timeCheckBox & dailySummary value changes.
    * @param {*} e The event object
    */
-  handleInputChange(e) {
+  handleInputChange = e => {
     const name = e.target.name;
     const value = name === "timeCheckbox" ? e.target.checked : e.target.value;
     this.setState({ [name]: value });
   }
 
-  updateEvent() {
+  updateEvent = () => {
     const data = {
       eventId: this.state.event.id,
       startTime: this.state.startTime,
@@ -305,7 +293,7 @@ export default class Home extends React.Component {
     this.resetPopupWindow();
   }
 
-  resetPopupWindow() {
+  resetPopupWindow = () => {
     this.setState({
       showAddEventModal: false,
       showUpdateEventModal: false,
@@ -327,7 +315,7 @@ export default class Home extends React.Component {
     }
   }
 
-  deleteEvent() {
+  deleteEvent = () => {
     const response = window.confirm("Are you sure to delete this event?");
     if (response === true) {
       const data = { eventId: this.state.event.id }
