@@ -24,7 +24,9 @@ export default function Singup() {
         </div>
         <div className="input-box">
           <input type="password" name="password" placeholder="Password" className="form-control"
-            onChange={e => handleInputChange(setPassword, e)} />
+            onChange={e => handleInputChange(setPassword, e)}
+            onKeyDown={e => handleKeyDown(email, username, password, setRedirect, 'signup', e)}
+          />
           <small>Password must contains at least 8 characters, including a uppercase letter, a lowercase letter,
             a digit and a special character.</small>
         </div>
@@ -56,4 +58,10 @@ export function auth(email, username, password, setRedirect, type) {
 
 export function handleInputChange(setState, e) {
   setState(e.target.value);
+}
+
+export function handleKeyDown(email, username, password, setRedirect, type, e) {
+  if (e.key === "Enter") {
+    auth(email, username, password, setRedirect, type)
+  }
 }

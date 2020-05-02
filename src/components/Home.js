@@ -311,7 +311,7 @@ export default class Home extends React.Component {
     if (arg.view.type === 'listWeek' && dailySummary) {
       const dailySummaryEl = document.createElement('div');
       dailySummaryEl.innerHTML = "Daily Summary: " + dailySummary;
-      arg.el.lastChild.appendChild(dailySummaryEl);
+      arg.el.lastChild.append(dailySummaryEl);
     }
   }
 
