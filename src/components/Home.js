@@ -124,16 +124,14 @@ export default class Home extends React.Component {
           endTime={this.state.endTime}
           onTimeChange={this.handleTimeChange}
 
-          timeCheckboxNeeded={true}
+          isUpdate
           timeCheckboxDisabled={this.state.timeCheckboxDisabled}
           timeCheckbox={this.state.timeCheckbox}
           onInputChange={this.handleInputChange}
 
-          dailySummaryNeeded={true}
           dailySummaryInputDisabled={this.state.dailySummaryInputDisabled}
           dailySummary={this.state.dailySummary}
 
-          deleteBtnNeeded={true}
           btnText={this.state.btnText}
           btnVisability={this.state.btnVisability}
           onSave={this.updateEvent}
