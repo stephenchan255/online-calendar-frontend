@@ -28,28 +28,28 @@ footer {
   padding-bottom: 1rem;
 }
 
-.content > .form {
+form {
   margin-top: 30px;
-}
-
-.form {
   max-width: 350px;
   margin: auto;
 }
-.form input {
-  padding: 20px 10px;
-  margin-top: 1rem;
+form input {
+  margin: 1rem auto 0.5rem;
 }
-.form input[type=submit] {
+form input[type=submit] {
   padding: 15px;
   font-weight: 500;
   font-size: 1.125rem;
 }
-.form small {
+form small {
   color: #6c757d;
 }
-.form .btn {
+form .btn {
   width: 100%;
+}
+
+.form-control {
+  padding: 20px 10px;
 }
 
 .btn {
@@ -63,10 +63,11 @@ footer {
   background: #6c757d;
 }
 
-.btn2 {
+.redirect-btn {
   text-decoration: underline;
   text-align: center;
   margin-top: 1rem;
+  color: #007BFF;
   cursor: pointer;
 }
 

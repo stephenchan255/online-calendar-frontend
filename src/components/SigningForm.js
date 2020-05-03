@@ -16,24 +16,20 @@ export default function SigningForm(props) {
 
   return (
     <div className="content">
-      <div className="form">
-
+      <form onSubmit={handleAuth}>
         {/* email input */}
         {isSignup &&
           <input type="text" name="email" placeholder="Email" className="form-control"
-            onChange={e => handleInputChange(setEmail, e)}
-            onKeyDown={handleKeyDown}
-          />
+            onChange={e => handleInputChange(setEmail, e)} />
         }
 
         {/* username input */}
         <div className="input-box">
           <input type="text" name="username" placeholder="Username" className="form-control"
             onChange={e => handleInputChange(setUsername, e)}
-            onKeyDown={handleKeyDown}
           />
           {isSignup &&
-            <small>Username must contains at least 4 characters, which can be letters, digits and underscore.</small>
+            <small>At least 4 characters, e.g. letters, digits or underscore.</small>
           }
         </div>
 
@@ -41,21 +37,18 @@ export default function SigningForm(props) {
         <div className="input-box">
           <input type="password" name="password" placeholder="Password" className="form-control"
             onChange={e => handleInputChange(setPassword, e)}
-            onKeyDown={handleKeyDown}
           />
           {isSignup &&
-            <small>Password must contains at least 8 characters, including a uppercase letter, a lowercase letter, a digit and a special character.</small>
+            <small>At least 8 characters, including a uppercase letter, a lowercase letter, a digit and a special character.</small>
           }
         </div>
 
         {/* submit btn */}
-        <input type="submit" className="btn" value={isSignup ? "Sign Up" : "Login"}
-          onClick={handleAuth}
-        />
+        <input type="submit" className="btn" value={isSignup ? "Sign Up" : "Login"} />
+      </form>
 
-        {/* redirect btn */}
-        <div className="btn2" onClick={handleRedirect}>{isSignup ? "Login" : "Sign up"}</div >
-      </div>
+      {/* redirect link */}
+      <div className="redirect-btn" onClick={handleRedirect}>{isSignup ? "Login" : "Sign up"}</div >
     </div>
   );
 
@@ -63,28 +56,10 @@ export default function SigningForm(props) {
     setState(e.target.value);
   }
 
-  function handleKeyDown(e) {
-    if (e.key === "Enter") {
-      let form = document.querySelector(".form");
-      switch (e.target.name) {
-        case "email":
-          form.querySelector("[name = 'username']").focus();
-          break;
-        case "username":
-          form.querySelector("[name = 'password']").focus();
-          break;
-        case "password":
-          handleAuth();
-          break;
-        default:
-          form.querySelector("[name = 'email']").focus();
-      }
-    }
-  }
-
-  function handleAuth() {
+  function handleAuth(e) {
     isSignup ? auth(email, username, password, setRedirect, 'signup') :
       auth('emptyEmail', username, password, setRedirect, 'login');
+    e.preventDefault();
   }
 
   function auth(email, username, password, setRedirect, type) {
