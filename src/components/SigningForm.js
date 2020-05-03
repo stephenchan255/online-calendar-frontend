@@ -20,13 +20,13 @@ export default function SigningForm(props) {
         {/* email input */}
         {isSignup &&
           <input type="text" name="email" placeholder="Email" className="form-control"
-            onChange={e => handleInputChange(setEmail, e)} />
+            autoFocus onChange={e => handleInputChange(setEmail, e)} />
         }
 
         {/* username input */}
         <div className="input-box">
           <input type="text" name="username" placeholder="Username" className="form-control"
-            onChange={e => handleInputChange(setUsername, e)}
+            autoFocus={!isSignup} onChange={e => handleInputChange(setUsername, e)}
           />
           {isSignup &&
             <small>At least 4 characters, e.g. letters, digits or underscore.</small>
